@@ -49,7 +49,7 @@ namespace TestCases.POIFS.NIO
 
             try
             {
-                CheckDataSource(ds, false);
+                CheckDataSource(ds, true);
             }
             finally
             {
