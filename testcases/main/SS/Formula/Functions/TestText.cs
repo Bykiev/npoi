@@ -47,16 +47,18 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestTextWithDeciamlFormatSecondArg()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
+
             ValueEval numArg = new NumberEval(321321.321);
             ValueEval formatArg = new StringEval("#,###.00000");
             ValueEval[] args = { numArg, formatArg };
-            ValueEval result = TextFunction.TEXT.Evaluate(args, -1, (short)-1);
+            ValueEval result = TextFunction.TEXT.Evaluate(args, -1, -1);
             //char groupSeparator = new DecimalFormatSymbols(Locale.GetDefault()).GetGroupingSeparator();
             //char decimalSeparator = new DecimalFormatSymbols(Locale.GetDefault()).GetDecimalSeparator();
             
             NumberFormatInfo fs = CultureInfo.GetCultureInfo("en-US").NumberFormat;
             string groupSeparator = fs.NumberGroupSeparator;
-            string decimalSeparator = fs.NumberDecimalSeparator; ;
+            string decimalSeparator = fs.NumberDecimalSeparator;
 
             ValueEval testResult = new StringEval("321" + groupSeparator + "321" + decimalSeparator + "32100");
             Assert.AreEqual(testResult.ToString(), result.ToString());
@@ -77,6 +79,7 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestTextWithFractionFormatSecondArg()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
 
             ValueEval numArg = new NumberEval(321.321);
             ValueEval formatArg = new StringEval("# #/#");

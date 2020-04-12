@@ -82,6 +82,8 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestEvalOperationEvaluationContext()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             OperationEvaluationContext ctx = CreateContext();
 
             ValueEval[] args = new ValueEval[] { ctx.GetRefEval(0, 0) };
@@ -134,6 +136,8 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestRefs()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             OperationEvaluationContext ctx = CreateContext();
 
             ValueEval[] args = new ValueEval[] { ctx.GetRefEval(0, 0) };
@@ -146,6 +150,8 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestWithPlacesIntInt()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             OperationEvaluationContext ctx = CreateContext();
 
             ValueEval[] args = new ValueEval[] { ctx.GetRefEval(0, 0), ctx.GetRefEval(0, 1) };
@@ -159,6 +165,8 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestWithPlaces()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             OperationEvaluationContext ctx = CreateContext();
 
             ValueEval[] args = new ValueEval[] { ctx.GetRefEval(0, 0), ctx.GetRefEval(0, 1) };
@@ -172,6 +180,8 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestWithToshortPlaces()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             OperationEvaluationContext ctx = CreateContext();
 
             ValueEval[] args = new ValueEval[] { ctx.GetRefEval(0, 0), ctx.GetRefEval(0, 3) };
@@ -208,6 +218,8 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestWithErrorPlaces()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             OperationEvaluationContext ctx = CreateContext();
 
             ValueEval[] args = new ValueEval[] { ctx.GetRefEval(0, 0), ErrorEval.NULL_INTERSECTION };
@@ -220,6 +232,8 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestWithNegativePlaces()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             OperationEvaluationContext ctx = CreateContext();
 
             ValueEval[] args = new ValueEval[] { ctx.GetRefEval(0, 0), ctx.GetRefEval(0, 2) };
@@ -232,6 +246,8 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestWithZeroPlaces()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             OperationEvaluationContext ctx = CreateContext();
 
             ValueEval[] args = new ValueEval[] { ctx.GetRefEval(0, 0), new NumberEval(0.0) };

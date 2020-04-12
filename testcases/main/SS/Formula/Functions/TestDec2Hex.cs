@@ -73,6 +73,8 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestBasic()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             ConfirmValue("Converts decimal 100 to hexadecimal with 0 characters (64)", "100", "0", "64");
             ConfirmValue("Converts decimal 100 to hexadecimal with 4 characters (0064)", "100", "4", "0064");
             ConfirmValue("Converts decimal 100 to hexadecimal with 5 characters (0064)", "100", "5", "00064");
@@ -157,6 +159,8 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestRefs()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             OperationEvaluationContext ctx = CreateContext();
 
             ValueEval[] args = new ValueEval[] { ctx.GetRefEval(0, 0) };
@@ -169,6 +173,8 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestWithPlacesIntInt()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             OperationEvaluationContext ctx = CreateContext();
 
             ValueEval[] args = new ValueEval[] { ctx.GetRefEval(0, 0), ctx.GetRefEval(0, 1) };
@@ -181,6 +187,8 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestWithPlaces()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             OperationEvaluationContext ctx = CreateContext();
 
             ValueEval[] args = new ValueEval[] { ctx.GetRefEval(0, 0), ctx.GetRefEval(0, 1) };
@@ -217,6 +225,8 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestWithErrorPlaces()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             OperationEvaluationContext ctx = CreateContext();
 
             ValueEval[] args = new ValueEval[] { ctx.GetRefEval(0, 0), ErrorEval.NULL_INTERSECTION };
@@ -229,6 +239,8 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestWithNegativePlaces()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             OperationEvaluationContext ctx = CreateContext();
 
             ValueEval[] args = new ValueEval[] { ctx.GetRefEval(0, 0), ctx.GetRefEval(0, 2) };

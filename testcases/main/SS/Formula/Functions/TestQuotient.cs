@@ -38,6 +38,8 @@ namespace TestCases.SS.Formula.Functions
 
         private static void ConfirmValue(String msg, String numerator, String denominator, String expected)
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             ValueEval result = invokeValue(numerator, denominator);
             Assert.AreEqual(typeof(NumberEval), result.GetType());
             Assert.AreEqual(expected, ((NumberEval)result).StringValue, msg);
@@ -63,6 +65,8 @@ namespace TestCases.SS.Formula.Functions
         [Test]
         public void TestErrors()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             ConfirmValueError("numerator is nonnumeric", "ABCD", "", ErrorEval.VALUE_INVALID);
             ConfirmValueError("denominator is nonnumeric", "", "ABCD", ErrorEval.VALUE_INVALID);
 

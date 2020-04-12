@@ -178,7 +178,7 @@ namespace TestCases.HSSF.UserModel
             Assert.AreEqual(1, b.ActiveSheetIndex);
             Assert.AreEqual(1, b.FirstVisibleTab);
         }
-        
+
         [Test]
         public void ReadWriteWithCharts()
         {
@@ -950,7 +950,11 @@ namespace TestCases.HSSF.UserModel
             POIFSFileSystem fs = new POIFSFileSystem();
             try
             {
-                new HSSFWorkbook(fs).Close();
+                Assert.Throws<ArgumentException>(() =>
+                {
+                    var workbook = new HSSFWorkbook(fs);
+                    workbook.Close();
+                }, "The supplied POIFSFileSystem does not contain a BIFF8 'Workbook' entry. Is it really an excel file?");
             }
             finally
             {
