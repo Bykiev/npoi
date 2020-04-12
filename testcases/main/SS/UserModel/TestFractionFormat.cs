@@ -34,6 +34,8 @@ namespace TestCases.SS.UserModel
         [Test]
         public void TestSingle()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
             FractionFormat f = new FractionFormat("", "##");
             string val = "321.321";
             String ret = f.Format(val);
